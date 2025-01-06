@@ -1,0 +1,574 @@
+/* The flip card container */
+.flip-card {
+    background-color: transparent;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side */
+  .flip-card-front {
+    color: black;
+  }
+  
+  /* Style the back side */
+  .flip-card-back {
+    background: linear-gradient(to bottom, #ffffff, #abaaaa); /* Vertical */
+    color: white;
+    transform: rotateY(180deg);
+  }
+  .container-bg {
+    position: relative; /* Ensures the child elements are positioned relative to this container */
+    overflow: hidden; /* Hides any overflowing content */
+    width: 100%; /* Makes the container responsive */
+  }
+  
+  .slicedBox {
+    border-bottom: 794px solid #000000;
+    border-left: 0px solid transparent;
+    border-right: 300px solid transparent;
+    width: 60%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 32%;
+  
+  }
+
+/*Tracking for pusrchase overview*/
+body {
+  color: #000;
+  height: 100%;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+}
+
+.card {
+  z-index: 0;
+  background-color: #ffffff;
+  padding-bottom: 20px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border-radius: 0px;
+  border:none;
+  height: 630px;
+  
+
+}
+
+.top {
+  padding-top: 40px;
+  padding-left: 13% !important;
+  padding-right: 13% !important;
+}
+
+/* Icon progressbar */
+#progressbar {
+  margin-bottom: 30px;
+  overflow: hidden;
+  color: #455A64;
+  padding-left: 0;
+  margin-top: 30px;
+  display: flex; /* Flex layout */
+  justify-content: space-evenly; /* Ensure equal spacing between steps */
+  align-items: center; /* Center items vertically */
+}
+
+#progressbar li {
+  list-style-type: none;
+  font-size: 13px;
+  flex: none; /* Disable flexible shrinking/growing */
+  width: 100px; /* Fixed width for each step */
+  text-align: center;
+  position: relative;
+  font-weight: 400;
+}
+
+#progressbar .step0:before {
+  font-family: FontAwesome;
+  content: "\f10c";
+  color: #fff;
+}
+
+/* Step circle styling */
+#progressbar li:before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  display: block;
+  font-size: 20px;
+  background: #d9d9da;
+  border-radius: 50%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+/* Active step styling */
+#progressbar li.active:before {
+  background: #37363b; /* Purple for active step */
+  font-family: FontAwesome;
+  content: "\f00c"; /* Checkmark icon for active step */
+  color: #fff;
+}
+
+/* ProgressBar connectors */
+#progressbar li:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 12px;
+  width: calc(100% - 5px); /* Adjust width to leave space at the end */
+
+  background: #d9d9da; /* Default color for inactive connectors */
+  z-index: 5;
+  transform: translateX(15px) translateY(-50%);
+}
+
+/* Active connectors */
+#progressbar li.active::after {
+  background: #37363b; /* Purple for active connectors */
+}
+
+/* Remove connector after the last step */
+#progressbar li:last-child:after {
+  content: none;
+}
+
+/* Icon styling */
+.icon {
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
+}
+
+.icon-content {
+  padding-bottom: 20px;
+}
+
+@media screen and (max-width: 992px) {
+  .icon-content {
+      width: 50%;
+  }
+}
+
+
+/*modal table*/
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+  margin-top: 10px;
+}
+
+td, th {
+  
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #d9d9da;
+}
+
+/*remove hover sidepannel effect*/
+.no-hover:hover {
+  color: black;
+  text-decoration: none;
+}
+
+/*hover navbar*/
+.no-hover-nav:hover {
+  color: white;
+  text-decoration: none;
+}
+
+/*hover for sidepannel icon*/
+.no-hover-side-icon {
+  color: white;
+  text-decoration: none;
+}
+
+/*font footer */
+.font-footer {
+  font-family: "Oswald", sans-serif;
+}
+
+/*toggle switch*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+
+/* Tooltip text REQUESTOR */
+.tooltip-requestor .tooltiptext-requestor {
+  visibility: hidden;
+  width: 90px;
+  background-color: rgb(80, 80, 80);
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  top: 0px;
+  left: 7px;
+  position: absolute;
+  z-index: 50;
+
+  /* Add animation properties */
+  opacity: 0; /* Initially invisible */
+  transform: translateY(10px); /* Slight offset for animation */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth animation for fade and movement */
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip-requestor:hover .tooltiptext-requestor {
+  visibility: visible;
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Reset offset */
+}
+
+
+
+/* Tooltip text MANAGER*/
+.tooltip-manager .tooltiptext-manager {
+  visibility: hidden;
+  width: 90px;
+  background-color: rgb(80, 80, 80);
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  top: 0px;
+  left: 7px;
+ 
+  
+  position: absolute;
+  z-index: 50;
+
+  /* Add animation properties */
+  opacity: 0; /* Initially invisible */
+  transform: translateY(10px); /* Slight offset for animation */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth animation for fade and movement */
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip-manager:hover .tooltiptext-manager {
+  visibility: visible;
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Reset offset */
+}
+
+
+/* Tooltip text QUOTATION*/
+.tooltip-quotation .tooltiptext-quotation {
+  visibility: hidden;
+  width: 90px;
+  background-color: rgb(80, 80, 80);
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  top: 0px;
+  left: 7px;
+ 
+  
+  position: absolute;
+  z-index: 50;
+
+  /* Add animation properties */
+  opacity: 0; /* Initially invisible */
+  transform: translateY(10px); /* Slight offset for animation */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth animation for fade and movement */
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip-quotation:hover .tooltiptext-quotation {
+  visibility: visible;
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Reset offset */
+}
+
+
+/* Tooltip text COO*/
+.tooltip-coo .tooltiptext-coo {
+  visibility: hidden;
+  width: 90px;
+  background-color: rgb(80, 80, 80);
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  top: 0px;
+  left: 7px;
+ 
+  
+  position: absolute;
+  z-index: 50;
+
+  /* Add animation properties */
+  opacity: 0; /* Initially invisible */
+  transform: translateY(10px); /* Slight offset for animation */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth animation for fade and movement */
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip-coo:hover .tooltiptext-coo {
+  visibility: visible;
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Reset offset */
+}
+
+
+/* Tooltip text CFO*/
+.tooltip-cfo .tooltiptext-cfo {
+  visibility: hidden;
+  width: 90px;
+  background-color: rgb(80, 80, 80);
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  top: 0px;
+  left: 7px;
+ 
+  
+  position: absolute;
+  z-index: 50;
+
+  /* Add animation properties */
+  opacity: 0; /* Initially invisible */
+  transform: translateY(10px); /* Slight offset for animation */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth animation for fade and movement */
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip-cfo:hover .tooltiptext-cfo {
+  visibility: visible;
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Reset offset */
+}
+
+/* Tooltip text PROCUREMENT*/
+.tooltip-procurement .tooltiptext-procurement {
+  visibility: hidden;
+  width: 90px;
+  background-color: rgb(80, 80, 80);
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  top: 0px;
+  left: 7px;
+ 
+
+  position: absolute;
+  z-index: 50;
+
+  /* Add animation properties */
+  opacity: 0; /* Initially invisible */
+  transform: translateY(10px); /* Slight offset for animation */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth animation for fade and movement */
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip-procurement:hover .tooltiptext-procurement {
+  visibility: visible;
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Reset offset */
+}
+
+
+/* Tooltip text COMPLETED*/
+.tooltip-completed .tooltiptext-completed {
+  visibility: hidden;
+  width: 90px;
+  background-color: rgb(80, 80, 80);
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  top: 0px;
+  left: 7px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 50;
+
+  /* Add animation properties */
+  opacity: 0; /* Initially invisible */
+  transform: translateY(10px); /* Slight offset for animation */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth animation for fade and movement */
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip-completed:hover .tooltiptext-completed {
+  visibility: visible;
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Reset offset */
+}
+
+/* Tooltip text SWITCH ACTIVE USER MANAGEMENT*/
+.tooltip-active .tooltiptext-active {
+  visibility: hidden;
+  width: 90px;
+  background-color: rgb(80, 80, 80);
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 20px 17px 17px 2px;
+  transform: translateY(-36px) translateX(10px);
+  
+
+  position: absolute;
+  z-index: 50;
+
+  /* Add animation properties */
+  opacity: 0; /* Initially invisible */
+  transform: translateY(15px); /* Slight offset for animation */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth animation for fade and movement */
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip-active:hover .tooltiptext-active {
+  visibility: visible;
+  opacity: 1; /* Fully visible */
+  transform: translateY(-36px) translateX(10px); /* Reset offset */
+}
+
+/* Tooltip text SWITCH ACTIVE USER MANAGEMENT EDIT*/
+.tooltip-activeedit .tooltiptext-activeedit {
+  visibility: hidden;
+  width: 90px;
+  background-color: rgb(80, 80, 80);
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 20px 17px 17px 2px;
+  transform: translateY(-36px) translateX(10px);
+  
+  
+  position: absolute;
+  z-index: 50;
+
+  /* Add animation properties */
+  opacity: 0; /* Initially invisible */
+  transform: translateY(10px); /* Slight offset for animation */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth animation for fade and movement */
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip-activeedit:hover .tooltiptext-activeedit {
+  visibility: visible;
+  opacity: 1; /* Fully visible */
+  transform: translateY(-36px) translateX(10px); /* Reset offset */
+}
+
+
+/* Tooltip text SWITCH ACTIVE DEPARTMENT MODULE*/
+.tooltip-activedepartment .tooltiptext-activedepartment {
+  visibility: hidden;
+  width: 90px;
+  background-color: rgb(80, 80, 80);
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 50px;
+  transform: translateX(70px);
+
+  position: absolute;
+  z-index: 50;
+
+  /* Add animation properties */
+  opacity: 0; /* Initially invisible */
+  transform: translateY(10px); /* Slight offset for animation */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth animation for fade and movement */
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip-activedepartment:hover .tooltiptext-activedepartment {
+  visibility: visible;
+  opacity: 1; /* Fully visible */
+  transform: translateX(65px); /* Reset offset */
+  
+}
