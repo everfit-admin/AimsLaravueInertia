@@ -23,6 +23,8 @@ const activeTab = ref('operating');
 //reactive inputs for OPERATING EXPENSES
 const rows = reactive([
   {
+    opexpensesinput: "",
+    opexpenseslabel: "",
     jan: "",
     feb: "",
     mar: "",
@@ -40,6 +42,8 @@ const rows = reactive([
 
 const addRow = () => {
   rows.push({
+    opexpensesinput: "",
+    opexpenseslabel: "",
     jan: "",
     feb: "",
     mar: "",
@@ -63,6 +67,8 @@ const removeRow = (index) => {
 //reactive inputs for CAPITAL EXPENDITURE EXPENSES
 const rowscapex = reactive([
   {
+    capexpenditurelabel: "",
+    capexpenditureinput: "",
     jancapex: "",
     febcapex: "",
     marcapex: "",
@@ -80,6 +86,8 @@ const rowscapex = reactive([
 
 const addRowcapex = () => {
     rowscapex.push({
+    capexpenditurelabel: "",
+    capexpenditureinput: "",
     jancapex: "",
     febcapex: "",
     marcapex: "",
@@ -256,14 +264,14 @@ export default {
                             
                             <div class="flex">
                                 <label for="" class="pt-2">Operating Expenses:</label>
-                                <input type="text" class="border rounded-md mx-1 px-2">
+                                <input type="text" v-model="row.opexpensesinput" class="border rounded-md mx-1 px-2">
                             </div>
                         </div>
                         
                         <div class="flex justify-between">
                             <div class="flex justify-start mt-2 mb-6">
                                 
-                                <input type="text" class="font-semibold text-lg border rounded-md w-[230px] px-2 py-1">
+                                <input type="text" v-model="row.opexpenseslabel" class="font-semibold text-lg border rounded-md w-[230px] px-2 py-1">
                             </div>
                             <div class="items-center flex">
                                 <img src="../../components/images/icon-delete.png" @click="removeRow(index)" class="w-[25px] cursor-pointer hover:scale-110 duration-500" alt="">
@@ -337,13 +345,13 @@ export default {
                         <div class="flex justify-end">
                             <div class="flex">
                                 <label for="" class="pt-2">Capital Expenditure Expenses:</label>
-                                <input type="text" class="border rounded-md mx-1 px-2">
+                                <input type="text" v-model="rowcapex.capexpenditurelabel"  class="border rounded-md mx-1 px-2">
                             </div>
                         </div>
                         
                         <div class="flex justify-between">
                             <div class="flex justify-start mt-2 mb-6">
-                                <input type="text" class="font-semibold text-lg border rounded-md w-[230px] px-2 py-1">
+                                <input type="text" v-model="rowcapex.capexpenditureinput" class="font-semibold text-lg border rounded-md w-[230px] px-2 py-1">
                             </div>
                             <div class="items-center flex">
                                 <img src="../../components/images/icon-delete.png" @click="removeRowcapex(indexcapex)" class="w-[25px] cursor-pointer hover:scale-110 duration-500" alt="">

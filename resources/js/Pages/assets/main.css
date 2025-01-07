@@ -572,3 +572,33 @@ input:checked + .slider:before {
   transform: translateX(65px); /* Reset offset */
   
 }
+
+
+
+.hoverbox-links .hoverboxtext-links {
+  visibility: hidden;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  top: 0px;
+  left: 7px;
+  position: absolute;
+  z-index: 50;
+  border-radius: 2px 17px 17px 17px;
+
+  /* Add animation properties */
+  opacity: 0; /* Initially invisible */
+  transform: translateY(-20px) translateX(40px); /* Slight offset for animation */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth animation for fade and movement */
+
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.hoverbox-links:hover .hoverboxtext-links {
+  visibility: visible;
+  opacity: 1; /* Fully visible */
+  transform: translateY(32px) translateX(40px); /* Reset offset */
+}

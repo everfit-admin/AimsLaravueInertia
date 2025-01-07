@@ -13,22 +13,13 @@ import { showModalEditAssetIn } from './ModalStateAssetManagement';
 import { ref } from 'vue'
 
 
-const isModalCreateAssetIn = ref(false);
-const currentItem = ref(null); // Store the item to be edited
-
-// Methods to toggle each modal's visibility
-function openModalAssetIn() {
-    isModalCreateAssetIn.value = true;
-}
-
-function closeModalAssetIn() {
-    isModalCreateAssetIn.value = false;
-}
 
 
 </script>
 
 <script>
+import { Link } from '@inertiajs/vue3';
+
 export default {
     
 }
@@ -56,12 +47,12 @@ export default {
                             <h1 class="">Moved Assets >> Assets In</h1>
                         </div>
                         <div class="flex mx-4 gap-2 py-4">
-                            <router-link to="/moved-assets-in" class="bg-gray text-black px-4 rounded-lg font-semibold flex items-center no-hover" active-class="bg-black text-white">
+                            <Link href="/moved-assets-in" class="bg-black text-white px-4 rounded-lg font-semibold flex items-center no-hover">
                                 ASSET IN
-                            </router-link>
-                            <router-link to="/moved-assets-out" class="bg-gray text-black px-4 rounded-lg font-semibold flex items-center no-hover" active-class="bg-black text-white">
+                            </Link>
+                            <Link href="/moved-assets-out" class="bg-gray text-black px-4 rounded-lg font-semibold flex items-center no-hover">
                                 ASSET OUT
-                            </router-link>
+                            </Link>
                         </div>
                     </div>
                     

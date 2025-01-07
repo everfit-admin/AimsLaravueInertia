@@ -3,6 +3,9 @@ import NavBar from '../components/NavBar.vue'
 import FooterPage from '../components/FooterPage.vue'
 </script>
 
+<script>
+import { Link } from '@inertiajs/vue3';
+</script>
 <template>
   <header>
     <NavBar/>
@@ -39,13 +42,44 @@ import FooterPage from '../components/FooterPage.vue'
               <div class="flip-card-back text-black absolute top-0 rounded-md xl:w-[300px] xl:h-[300px] lg:w-[230px] lg:h-[230px] md:w-[200px] md:h-[200px] w-[160px] h-[160px]">
                 <div class="xl:mt-12 lg:mt-8 md:mt-7 mt-3">
                   <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow xl:w-[200px] lg:w-[170px] w-[130px] lg:text-[15px] md:text-[10px] text-[8px]  my-2">
-                  Button One
+                    Purchase Overview
                   </button>
                   <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow xl:w-[200px] lg:w-[170px] w-[130px] lg:text-[15px] md:text-[10px] text-[8px] my-2">
-                    Button Two
+                    Purchase Requests
                   </button>
                   <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow xl:w-[200px] lg:w-[170px] w-[130px] lg:text-[15px] md:text-[10px] text-[8px] my-2">
-                    Button Three
+                    Purchase Approval
+                  </button>
+                  <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow xl:w-[200px] lg:w-[170px] w-[130px] lg:text-[15px] md:text-[10px] text-[8px] my-2">
+                    Budget Fund
+                  </button>
+                  <button name="" id="" class="relative bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow xl:w-[200px] lg:w-[170px] w-[130px] lg:text-[15px] md:text-[10px] text-[8px] my-2 hoverbox-links">
+                    Asset Management 
+                    <div class="hoverboxtext-links absolute text-black shadow-lg hoverbox-links">
+                      <div>
+                        <Link href="asset-management">
+                          Assign Assets
+                        </Link>
+                      </div>
+                      
+                      <div>
+                          <Link href="moved-assets-in">
+                            Moved Assets
+                          </Link>
+                      </div>
+
+                      <div>
+                        <Link href="scrapped-assets">
+                          Scrapped Assets
+                        </Link>
+                      </div>
+                      
+                      <div>
+                        <Link href="category">
+                          Category
+                        </Link>
+                      </div>
+                    </div>
                   </button>
                 </div>
                 
@@ -63,16 +97,23 @@ import FooterPage from '../components/FooterPage.vue'
               </div>
               <div class="flip-card-back text-black absolute top-0 rounded-md xl:w-[300px] xl:h-[300px] lg:w-[230px] lg:h-[230px] md:w-[200px] md:h-[200px] w-[160px] h-[160px]">
                 <div class="xl:mt-12 lg:mt-8 md:mt-7 mt-3">
-                  <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow xl:w-[200px] lg:w-[170px] w-[130px] lg:text-[15px] md:text-[10px] text-[8px]">
-                  Button One
+                  <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow xl:w-[200px] lg:w-[170px] w-[130px] lg:text-[15px] md:text-[10px] text-[8px]  my-2">
+                    Account Management
                   </button>
                   <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow xl:w-[200px] lg:w-[170px] w-[130px] lg:text-[15px] md:text-[10px] text-[8px] my-2">
-                    Button Two
+                    Maintenance
                   </button>
                   <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow xl:w-[200px] lg:w-[170px] w-[130px] lg:text-[15px] md:text-[10px] text-[8px] my-2">
-                    Button Three
+                    Point of Sale
+                  </button>
+                  <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow xl:w-[200px] lg:w-[170px] w-[130px] lg:text-[15px] md:text-[10px] text-[8px] my-2">
+                    Knowledge Vault
+                  </button>
+                  <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow xl:w-[200px] lg:w-[170px] w-[130px] lg:text-[15px] md:text-[10px] text-[8px] my-2">
+                    Logs
                   </button>
                 </div>
+                
               </div>
             </div>
           </div>
@@ -87,13 +128,16 @@ import FooterPage from '../components/FooterPage.vue'
               <div class="flip-card-back text-black absolute top-0 rounded-md xl:w-[300px] xl:h-[300px] lg:w-[230px] lg:h-[230px] md:w-[200px] md:h-[200px] w-[160px] h-[160px]">
                 <div class="xl:mt-12 lg:mt-8 md:mt-7 mt-3">
                   <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow xl:w-[200px] lg:w-[170px] w-[130px] lg:text-[15px] md:text-[10px] text-[8px] my-2">
-                  Button One
+                    Request Management
                   </button>
                   <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow xl:w-[200px] lg:w-[170px] w-[130px] lg:text-[15px] md:text-[10px] text-[8px] my-2">
-                    Button Two
+                    Supplier Management
                   </button>
                   <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow xl:w-[200px] lg:w-[170px] w-[130px] lg:text-[15px] md:text-[10px] text-[8px] my-2">
-                    Button Three
+                    PO Receipts
+                  </button>
+                  <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow xl:w-[200px] lg:w-[170px] w-[130px] lg:text-[15px] md:text-[10px] text-[8px] my-2">
+                    Approval
                   </button>
                 </div>
               </div>

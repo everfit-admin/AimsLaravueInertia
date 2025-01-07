@@ -1,7 +1,6 @@
 
 <script setup>
 import NavBar from '../../components/NavBar.vue'
-// import PortalSidebarPannel from '../../components/PortalSidebarPannel.vue';
 import ProcurementSidebarPannel from '../../components/ProcurementSidebarPannel.vue';
 </script>
 

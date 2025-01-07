@@ -1,8 +1,8 @@
 <script setup>
 import NavBar from '../../components/NavBar.vue'
-import SidebarPannel from '@/components/SidebarPannel.vue';
+import SidebarPannel from '../../components/SidebarPannel.vue';
 import Swal from 'sweetalert2'
-import SideAssetCategories from '@/components/SideAssetCategories.vue';
+import SideAssetCategories from '../../components/SideAssetCategories.vue';
 import DeviceGridAssetOut from './DeviceGridAssetOut.vue';
 import { showModalAssetOut } from './ModalStateAssetManagement';
 import { showModalEditAssetOut } from './ModalStateAssetManagement';
@@ -27,6 +27,8 @@ function closeModalAssetOut() {
 </script>
 
 <script>
+import { Link } from '@inertiajs/vue3';
+
 export default {
     
 }
@@ -54,12 +56,12 @@ export default {
                             <h1 class="">Moved Assets >> Assets Out</h1>
                         </div>
                         <div class="flex mx-4 gap-2 py-4">
-                            <router-link to="/moved-assets-in" class="bg-gray text-black px-4 rounded-lg font-semibold flex items-center no-hover" active-class="bg-black text-white">
+                            <Link href="/moved-assets-in" class="bg-gray text-black px-4 rounded-lg font-semibold flex items-center no-hover">
                                 ASSET IN
-                            </router-link>
-                            <router-link to="/moved-assets-out" class="bg-gray text-black px-4 rounded-lg font-semibold flex items-center no-hover" active-class="bg-black text-white">
+                            </Link>
+                            <Link href="/moved-assets-out" class="bg-black text-white px-4 rounded-lg font-semibold flex items-center no-hover">
                                 ASSET OUT
-                            </router-link>
+                            </Link>
                         </div>
                     </div>
                   
