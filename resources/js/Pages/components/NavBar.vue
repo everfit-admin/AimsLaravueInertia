@@ -77,10 +77,48 @@ export default {
     </div>
 
     <!-- User Icon Section -->
-    <div class="flex justify-end pr-2">
-      <div class="flex justify-center bg-white w-7 h-7 pt-1 rounded-full">
-        <font-awesome-icon :icon="['far', 'user']" />
+    <div class="flex justify-end pr-2 relative">
+      <div class="group">
+        <div class="flex justify-center bg-white w-7 h-7 pt-1 rounded-full group-hover:opacity-50">
+          <font-awesome-icon :icon="['far', 'user']"  class=""/>
+        </div>
+        <div class="z-50 absolute group-hover:-translate-x-[270px] translate-x-[50px] translate-y-[2px] duration-500">
+            <div class="w-[300px] h-[750px] bg-white shadow-lg rounded-lg py-5 px-2 overflow-y-auto">
+              <div class="flex justify-center">
+                <div class="flex justify-center bg-slate-200 w-[120px] h-[120px] pt-1 rounded-full group-hover:opacity-50 shadow-lg">
+                    <font-awesome-icon :icon="['far', 'user']"  class="w-[70px] h-[70px] py-[15px]"/>
+                </div>
+              </div>
+              
+              <div class="text-center">
+                <h4 class="font-bold py-2 text-[20px]">Jeff Orilla</h4>
+                <p>emailsample@gmail.com</p>
+                <button class="bg-black font-bold text-white px-6 rounded-full py-1 my-3 hover:scale-110 duration-500">
+                  Sign Out
+                </button>
+              </div>
+              <div class="flex justify-center">
+                <div class="grid grid-cols-2 gap-2">
+                  <div class="w-[100px] h-[100px] bg-gray rounded-lg"></div>
+                  <div class="w-[100px] h-[100px] bg-gray rounded-lg"></div>
+                  <div class="w-[100px] h-[100px] bg-gray rounded-lg"></div>
+                  <div class="w-[100px] h-[100px] bg-gray rounded-lg"></div>
+                  <div class="w-[100px] h-[100px] bg-gray rounded-lg"></div>
+                  <div class="w-[100px] h-[100px] bg-gray rounded-lg"></div>
+                  <div class="w-[100px] h-[100px] bg-gray rounded-lg"></div>
+                  <div class="w-[100px] h-[100px] bg-gray rounded-lg"></div>
+                  <div class="w-[100px] h-[100px] bg-gray rounded-lg"></div>
+                  <div class="w-[100px] h-[100px] bg-gray rounded-lg"></div>
+                  <div class="w-[100px] h-[100px] bg-gray rounded-lg"></div>
+                  <div class="w-[100px] h-[100px] bg-gray rounded-lg"></div>
+                </div>
+              </div>
+              
+              
+            </div>
+        </div>
       </div>
+      
     </div>
   </div>
 </template>

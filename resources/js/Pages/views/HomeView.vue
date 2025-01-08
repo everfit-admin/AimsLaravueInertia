@@ -59,7 +59,7 @@ import { Link } from '@inertiajs/vue3';
     
                     Asset Management 
                     <svg
-                      class="w-[30%] h-[30%] translate-x-[40%] xl:-translate-y-[25px] -translate-y-[20px] transition-transform duration-300 -rotate-90 group-hover:rotate-3 mt-[10px] ml-[3px] cursor-pointer absolute right-3"
+                      class="w-[20%] h-[20%] translate-x-[40%] xl:-translate-y-[25px] -translate-y-[20px] transition-transform duration-300 -rotate-90 group-hover:rotate-3 mt-[10px] ml-[3px] cursor-pointer absolute right-3"
                       
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
@@ -115,7 +115,7 @@ import { Link } from '@inertiajs/vue3';
     
                     Account Management
                     <svg
-                      class="w-[30%] h-[30%] translate-x-[50%] xl:-translate-y-[25px] -translate-y-[20px] transition-transform duration-300 -rotate-90 group-hover:rotate-3 mt-[10px] ml-[3px] cursor-pointer absolute right-3"
+                      class="w-[20%] h-[20%] translate-x-[50%] xl:-translate-y-[25px] -translate-y-[20px] transition-transform duration-300 -rotate-90 group-hover:rotate-3 mt-[10px] ml-[3px] cursor-pointer absolute right-3"
                       
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
@@ -146,7 +146,7 @@ import { Link } from '@inertiajs/vue3';
     
                     Point of Sale
                     <svg
-                      class="w-[30%] h-[30%] translate-x-[50%] xl:-translate-y-[25px] -translate-y-[20px] transition-transform duration-300 -rotate-90 group-hover:rotate-3 mt-[10px] ml-[3px] cursor-pointer absolute right-3"
+                      class="w-[20%] h-[20%] translate-x-[50%] xl:-translate-y-[25px] -translate-y-[20px] transition-transform duration-300 -rotate-90 group-hover:rotate-3 mt-[10px] ml-[3px] cursor-pointer absolute right-3"
                       
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
@@ -207,7 +207,7 @@ import { Link } from '@inertiajs/vue3';
     
                       Request Management
                       <svg
-                        class="w-[30%] h-[30%] translate-x-[50%] xl:-translate-y-[25px] -translate-y-[20px] transition-transform duration-300 -rotate-90 group-hover:rotate-3 mt-[10px] ml-[3px] cursor-pointer absolute right-3"
+                        class="w-[20%] h-[20%] translate-x-[50%] xl:-translate-y-[25px] -translate-y-[20px] transition-transform duration-300 -rotate-90 group-hover:rotate-3 mt-[10px] ml-[3px] cursor-pointer absolute right-3"
                         
                         aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
