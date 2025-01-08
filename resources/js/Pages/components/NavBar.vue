@@ -16,7 +16,12 @@ export default {
     const isActive = computed(() =>
       ['/dashboard-aims', '/purchase-overview', '/purchase-approval', '/purchase-requests', '/asset-management', '/moved-assets-in', '/moved-assets-out', '/scrapped-assets', '/category'].includes(currentUrl.value)
     );
-
+    const isActiveHome = computed(() =>
+      ['/home'].includes(currentUrl.value)
+    );
+    const isActiveBudget = computed(() =>
+      ['/budget-fund'].includes(currentUrl.value)
+    );
     const isActiveItPortal = computed(() =>
       ['/portal-dashboard', '/user-management', '/department-management'].includes(currentUrl.value)
     );
@@ -25,7 +30,7 @@ export default {
       ['/procurement-dashboard', '/department-request'].includes(currentUrl.value)
     );
 
-    return { isActive, isActiveItPortal, isActiveProcurement, currentUrl };
+    return { isActive, isActiveItPortal, isActiveProcurement, currentUrl, isActiveBudget, isActiveHome };
   },
 };
 </script>
@@ -40,7 +45,7 @@ export default {
     <!-- Navigation Links -->
     <div class="flex justify-center gap-8 col-span-3 font-bold text-white lg:text-md md:text-sm sm:text-xs text-[10px] xl:pt-1 pt-1">
       <div class="hover:scale-110 transform transition duration-300">
-        <Link href="/home" class="no-hover-nav" :class="{ 'bg-silver text-black px-2 py-1 rounded-sm no-hover-nav': currentUrl.value === '/home' }">
+        <Link href="/home" class="no-hover-nav" :class="{ 'bg-silver text-black px-2 py-1 rounded-sm no-hover-nav': isActiveHome }">
           HOME
         </Link>
       </div>
@@ -50,7 +55,7 @@ export default {
         </Link>
       </div>
       <div class="hover:scale-110 transform transition duration-300">
-        <Link href="/budget-fund" class="no-hover-nav" :class="{ 'bg-silver text-black px-2 py-1 rounded-sm no-hover-nav': currentUrl.value === '/budget-fund' }">
+        <Link href="/budget-fund" class="no-hover-nav" :class="{ 'bg-silver text-black px-2 py-1 rounded-sm no-hover-nav': isActiveBudget }">
           BUDGET
         </Link>
       </div>

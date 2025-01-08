@@ -70,11 +70,6 @@ onBeforeUnmount(() => {
               <img src="./images/icon-admin-setting.png" class="w-[37px]" alt="user management icon" />
             </Link>
           </div>
-          <div class="py-[7px]">
-            <Link href="/purchase-requests">
-              <img src="./images/icon-maintenance.png" class="w-[30px]" alt="maintenance icon" />
-            </Link>
-          </div>
           <div class="py-[4px]">
             <Link href="/purchase-approval">
               <img src="./images/icon-check.png" class="w-[30px]" alt="point of sale icon" />
@@ -139,47 +134,6 @@ onBeforeUnmount(() => {
               <li>
                 <Link href="/department-management" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white no-hover">
                   Department
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </li>
-
-        <!-- Maintenance -->
-        <li class="text-lg">
-          <div class="flex">
-            <Link href="/ass" :class="{ 'font-semibold bg-white pr-[0px] py-1 shadow-lg no-hover': $page.url === '/ass' }">
-              <button
-                id="dropdownDefaultButtonMain"
-                class="text-black hover:bg-gray-200 focus:outline-none rounded-lg text-[17px] px-3 py-0 text-center inline-flex items-center"
-                type="button"
-              >
-                Maintenance
-              </button>
-            </Link>
-            <svg
-              class="w-4 h-4 transition-transform duration-300 -rotate-90 mt-[10px] ml-[3px] cursor-pointer"
-              :class="isDropdownVisibleMain ? 'rotate-3' : ''"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 10 6"
-              @click.stop="toggleDropdownMain"
-            >
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
-            </svg>
-          </div>
-
-          <!-- Dropdown Menu -->
-          <div id="dropdownMain" v-show="isDropdownVisibleMain" class="z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 ml-[14px] mt-[10px]">
-            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
-              <li>
-                <Link href="/asset-management" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white no-hover">
-                  Sample
-                </Link>
-              </li>
-              <li>
-                <Link href="/moved-assets-in" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white no-hover">
-                  Sample
                 </Link>
               </li>
             </ul>

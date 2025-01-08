@@ -41,41 +41,55 @@ import { Link } from '@inertiajs/vue3';
               </div>
               <div class="flip-card-back text-black absolute top-0 rounded-md xl:w-[300px] xl:h-[300px] lg:w-[230px] lg:h-[230px] md:w-[200px] md:h-[200px] w-[160px] h-[160px]">
                 <div class="xl:mt-12 lg:mt-8 md:mt-7 mt-3">
-                  <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow xl:w-[200px] lg:w-[170px] w-[130px] lg:text-[15px] md:text-[10px] text-[8px]  my-2">
-                    Purchase Overview
+                  <button name="" id="" class="bg-white hoverbutton-links text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow w-[66%] xl:text-[15px] lg:text-[10px] md:text-[8px] text-[8px]  my-2">
+                    <Link href="/purchase-overview">Purchase Overview</Link>
+                    
                   </button>
-                  <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow xl:w-[200px] lg:w-[170px] w-[130px] lg:text-[15px] md:text-[10px] text-[8px] my-2">
-                    Purchase Requests
+                  <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow w-[66%] xl:text-[15px] lg:text-[10px] md:text-[8px] text-[8px] my-2">
+                    <Link href="/purchase-requests">Purchase Requests</Link>
                   </button>
-                  <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow xl:w-[200px] lg:w-[170px] w-[130px] lg:text-[15px] md:text-[10px] text-[8px] my-2">
-                    Purchase Approval
+                  <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow w-[66%] xl:text-[15px] lg:text-[10px] md:text-[8px] text-[8px] my-2">
+                    <Link href="/purchase-approval">Purchase Approval</Link>
                   </button>
-                  <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow xl:w-[200px] lg:w-[170px] w-[130px] lg:text-[15px] md:text-[10px] text-[8px] my-2">
-                    Budget Fund
+                  <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow w-[66%] xl:text-[15px] lg:text-[10px] md:text-[8px] text-[8px] my-2">
+                    <Link href="/budget-fund">Budget Fund</Link>
                   </button>
-                  <button name="" id="" class="relative bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow xl:w-[200px] lg:w-[170px] w-[130px] lg:text-[15px] md:text-[10px] text-[8px] my-2 hoverbox-links">
+                  
+                  <button name="" id="" class="relative group bg-white text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow w-[66%] xl:text-[15px] lg:text-[10px] md:text-[8px] text-[8px] my-2 hoverbox-links">
+    
                     Asset Management 
+                    <svg
+                      class="w-[30%] h-[30%] translate-x-[40%] xl:-translate-y-[25px] -translate-y-[20px] transition-transform duration-300 -rotate-90 group-hover:rotate-3 mt-[10px] ml-[3px] cursor-pointer absolute right-3"
+                      
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 10 6"
+                    
+                    >
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+                    </svg>
                     <div class="hoverboxtext-links absolute text-black shadow-lg hoverbox-links">
                       <div>
-                        <Link href="asset-management">
+                        <Link href="asset-management" class="hover:text-white hover:bg-black px-[23%]">
                           Assign Assets
                         </Link>
                       </div>
                       
                       <div>
-                          <Link href="moved-assets-in">
+                          <Link href="moved-assets-in" class="hover:text-white hover:bg-black px-[23%]">
                             Moved Assets
                           </Link>
                       </div>
 
                       <div>
-                        <Link href="scrapped-assets">
+                        <Link href="scrapped-assets" class="hover:text-white hover:bg-black px-[19%]">
                           Scrapped Assets
                         </Link>
                       </div>
                       
                       <div>
-                        <Link href="category">
+                        <Link href="category" class="hover:text-white hover:bg-black px-[30%]">
                           Category
                         </Link>
                       </div>
@@ -97,19 +111,81 @@ import { Link } from '@inertiajs/vue3';
               </div>
               <div class="flip-card-back text-black absolute top-0 rounded-md xl:w-[300px] xl:h-[300px] lg:w-[230px] lg:h-[230px] md:w-[200px] md:h-[200px] w-[160px] h-[160px]">
                 <div class="xl:mt-12 lg:mt-8 md:mt-7 mt-3">
-                  <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow xl:w-[200px] lg:w-[170px] w-[130px] lg:text-[15px] md:text-[10px] text-[8px]  my-2">
+                  <button name="" id="" class="relative group bg-white text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow w-[66%] xl:text-[15px] lg:text-[10px] md:text-[8px] text-[8px] my-2 hoverbox-links">
+    
                     Account Management
+                    <svg
+                      class="w-[30%] h-[30%] translate-x-[50%] xl:-translate-y-[25px] -translate-y-[20px] transition-transform duration-300 -rotate-90 group-hover:rotate-3 mt-[10px] ml-[3px] cursor-pointer absolute right-3"
+                      
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 10 6"
+                    
+                    >
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+                    </svg>
+                    <div class="hoverboxtext-links absolute text-black shadow-lg hoverbox-links">
+                      <div>
+                        <Link href="/user-management" class="hover:text-white hover:bg-black px-[36%]">
+                          User
+                        </Link>
+                      </div>
+                      
+                      <div>
+                          <Link href="/department-management" class="hover:text-white hover:bg-black px-[23%]">
+                            Department
+                          </Link>
+                      </div>
+
+                      
+                    </div>
                   </button>
-                  <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow xl:w-[200px] lg:w-[170px] w-[130px] lg:text-[15px] md:text-[10px] text-[8px] my-2">
-                    Maintenance
-                  </button>
-                  <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow xl:w-[200px] lg:w-[170px] w-[130px] lg:text-[15px] md:text-[10px] text-[8px] my-2">
+                  
+                  <button name="" id="" class="relative group bg-white text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow w-[66%] xl:text-[15px] lg:text-[10px] md:text-[8px] text-[8px] my-2 hoverbox-links">
+    
                     Point of Sale
+                    <svg
+                      class="w-[30%] h-[30%] translate-x-[50%] xl:-translate-y-[25px] -translate-y-[20px] transition-transform duration-300 -rotate-90 group-hover:rotate-3 mt-[10px] ml-[3px] cursor-pointer absolute right-3"
+                      
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 10 6"
+                    
+                    >
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+                    </svg>
+                    <div class="hoverboxtext-links absolute text-black shadow-lg hoverbox-links">
+                      <div>
+                        <Link href="" class="hover:text-white hover:bg-black px-[23%]">
+                          Sample
+                        </Link>
+                      </div>
+                      
+                      <div>
+                          <Link href="" class="hover:text-white hover:bg-black px-[23%]">
+                            Sample
+                          </Link>
+                      </div>
+
+                      <div>
+                        <Link href="" class="hover:text-white hover:bg-black px-[19%]">
+                          Sample
+                        </Link>
+                      </div>
+                      
+                      <div>
+                        <Link href="" class="hover:text-white hover:bg-black px-[30%]">
+                          Sample
+                        </Link>
+                      </div>
+                    </div>
                   </button>
-                  <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow xl:w-[200px] lg:w-[170px] w-[130px] lg:text-[15px] md:text-[10px] text-[8px] my-2">
+                  <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow w-[66%] xl:text-[15px] lg:text-[10px] md:text-[8px] text-[8px] my-2">
                     Knowledge Vault
                   </button>
-                  <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow xl:w-[200px] lg:w-[170px] w-[130px] lg:text-[15px] md:text-[10px] text-[8px] my-2">
+                  <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow w-[66%] xl:text-[15px] lg:text-[10px] md:text-[8px] text-[8px] my-2">
                     Logs
                   </button>
                 </div>
@@ -127,16 +203,53 @@ import { Link } from '@inertiajs/vue3';
               </div>
               <div class="flip-card-back text-black absolute top-0 rounded-md xl:w-[300px] xl:h-[300px] lg:w-[230px] lg:h-[230px] md:w-[200px] md:h-[200px] w-[160px] h-[160px]">
                 <div class="xl:mt-12 lg:mt-8 md:mt-7 mt-3">
-                  <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow xl:w-[200px] lg:w-[170px] w-[130px] lg:text-[15px] md:text-[10px] text-[8px] my-2">
-                    Request Management
-                  </button>
-                  <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow xl:w-[200px] lg:w-[170px] w-[130px] lg:text-[15px] md:text-[10px] text-[8px] my-2">
+                  <button name="" id="" class="relative group bg-white text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow w-[66%] xl:text-[15px] lg:text-[10px] md:text-[8px] text-[8px] my-2 hoverbox-links">
+    
+                      Request Management
+                      <svg
+                        class="w-[30%] h-[30%] translate-x-[50%] xl:-translate-y-[25px] -translate-y-[20px] transition-transform duration-300 -rotate-90 group-hover:rotate-3 mt-[10px] ml-[3px] cursor-pointer absolute right-3"
+                        
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 10 6"
+                      
+                      >
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+                      </svg>
+                      <div class="hoverboxtext-links absolute text-black shadow-lg hoverbox-links">
+                        <div>
+                          <Link href="" class="hover:text-white hover:bg-black px-[23%]">
+                            Sample
+                          </Link>
+                        </div>
+                        
+                        <div>
+                            <Link href="" class="hover:text-white hover:bg-black px-[23%]">
+                              Sample
+                            </Link>
+                        </div>
+
+                        <div>
+                          <Link href="" class="hover:text-white hover:bg-black px-[19%]">
+                            Sample
+                          </Link>
+                        </div>
+                        
+                        <div>
+                          <Link href="" class="hover:text-white hover:bg-black px-[30%]">
+                            Sample
+                          </Link>
+                        </div>
+                      </div>
+                    </button>
+                  <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow w-[66%] xl:text-[15px] lg:text-[10px] md:text-[8px] text-[8px] my-2">
                     Supplier Management
                   </button>
-                  <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow xl:w-[200px] lg:w-[170px] w-[130px] lg:text-[15px] md:text-[10px] text-[8px] my-2">
+                  <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow w-[66%] xl:text-[15px] lg:text-[10px] md:text-[8px] text-[8px] my-2">
                     PO Receipts
                   </button>
-                  <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow xl:w-[200px] lg:w-[170px] w-[130px] lg:text-[15px] md:text-[10px] text-[8px] my-2">
+                  <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow w-[66%] xl:text-[15px] lg:text-[10px] md:text-[8px] text-[8px] my-2">
                     Approval
                   </button>
                 </div>
@@ -155,13 +268,13 @@ import { Link } from '@inertiajs/vue3';
               </div>
               <div class="flip-card-back text-black absolute top-0 rounded-md xl:w-[300px] xl:h-[300px] lg:w-[230px] lg:h-[230px] md:w-[200px] md:h-[200px] w-[160px] h-[160px]">
                 <div class="xl:mt-12 lg:mt-8 md:mt-7 mt-3">
-                  <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow xl:w-[200px] lg:w-[170px] w-[130px] lg:text-[15px] md:text-[10px] text-[8px] my-2">
+                  <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow w-[66%] xl:text-[15px] lg:text-[10px] md:text-[8px] text-[8px] my-2">
                   Button One
                   </button>
-                  <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow xl:w-[200px] lg:w-[170px] w-[130px] lg:text-[15px] md:text-[10px] text-[8px] my-2">
+                  <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow w-[66%] xl:text-[15px] lg:text-[10px] md:text-[8px] text-[8px] my-2">
                     Button Two
                   </button>
-                  <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow xl:w-[200px] lg:w-[170px] w-[130px] lg:text-[15px] md:text-[10px] text-[8px] my-2">
+                  <button name="" id="" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow w-[66%] xl:text-[15px] lg:text-[10px] md:text-[8px] text-[8px] my-2">
                     Button Three
                   </button>
                 </div>

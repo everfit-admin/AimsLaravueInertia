@@ -7,7 +7,7 @@ import { ref } from 'vue'
 import { reactive } from "vue";
 
 const isModalVisible = ref(false);
-
+const isModalEditVisible = ref(false);
 
 // Methods to toggle each modal's visibility
 function openModal() {
@@ -16,6 +16,14 @@ function openModal() {
 
 function closeModal() {
     isModalVisible.value = false;
+}
+
+function openEditModal() {
+    isModalEditVisible.value = true;
+}
+
+function closeEditModal() {
+    isModalEditVisible.value = false;
 }
 
 const activeTab = ref('operating');
@@ -120,6 +128,7 @@ export default {
                 { title: 'Opex', value: 'opex', sortable: false },
                 { title: 'Capex', value: 'capex', sortable: false },
                 { title: 'Status', value: 'status', sortable: false },
+                { title: 'Action', value: 'action', sortable: false },
                 
             ],
             items: [
@@ -423,6 +432,212 @@ export default {
             
         </div>
     </ModalBudgetFund>
+    <!--Edit Budget-->
+    <ModalBudgetFund :isVisible="isModalEditVisible" @close="closeEditModal">
+        <div class="pt-3">
+            <div>
+                <h4 class="font-semibold text-[20px]">Edit Budget</h4>
+            </div>
+            <div class="flex justify-center">
+                <div class="w-[100%] h-0.5 bg-gray mt-[10px] mb-[20px] rounded-full duration-500 ease-in-out transform"></div>
+            </div>
+            <div class="flex justify-between mt-1">
+                <div class="">
+                    <input type="date" id="category" name="category" class="border border-gray-300 block text-gray-900 text-sm rounded-lg focus:ring-blue-500 w-[150px] p-2.5 m-1" placeholder="" required />
+                    <input type="text" id="category" name="category" class="border border-gray-300 block text-gray-900 text-sm rounded-lg focus:ring-blue-500 w-[150px] p-2.5 m-1" placeholder="" required />
+                    <input type="text" id="category" name="category" class="border border-gray-300 block text-gray-900 text-sm rounded-lg focus:ring-blue-500 w-[150px] p-2.5 m-1" placeholder="" required />
+                </div>
+                <div class="">
+                    <div class="flex gap-2">
+                        <div @click="saveBudgetChanges" class="bg-gray rounded-md px-4 py-1 flex cursor-pointer hover:scale-105 duration-300">
+                            <img width="40" src="../../components/images/icon-save.png" class="pr-1" alt="save"/>
+                            <h5 class="pt-2 text-white">
+                                SAVE
+                            </h5>
+                        </div>
+                        <div class="bg-gray rounded-md px-4 py-1 flex cursor-pointer hover:scale-105 duration-300">
+                            <img width="30" src="../../components/images/icon-preview.png" class="pr-1 pt-1 pb-1" alt="preview"/>
+                            <h5 class="pt-2 text-white">
+                                PREVIEW
+                            </h5>
+                        </div>
+                        
+                    </div>
+                    
+                    
+                </div> 
+            </div>
+             
+                <div class="w-[94%] h-0.5 bg-zinc-300 mt-[0px] rounded-full duration-500 ease-in-out transform absolute top-[280px]"></div>
+            <div>
+                <button class="py-2.5 px-5 me-4 mb-0 text-sm font-semibold focus:outline-none mt-4 rounded-t-[10px] border text-zinc-400 duration-300" :class="activeTab === 'operating' ? 'rounded-t-[10px] border bg-zinc-300 text-black' : ''" 
+                        @click="activeTab = 'operating'">
+                        Operating Expenses
+                    </button>
+                <button class="py-2.5 px-5 me-4 mb-0 text-sm font-semibold focus:outline-none mt-4 rounded-t-[10px] border text-zinc-400 duration-300" :class="activeTab === 'capital' ? 'rounded-t-[10px] border bg-zinc-300 text-black' : ''"
+                        @click="activeTab = 'capital'">
+                        Capital Expenditure Expenses
+                    </button>
+            </div>
+        
+            <div class="pt-5">
+                <div v-if="activeTab === 'operating'">
+                    <div v-for="(row, index) in rows" :key="index">
+                        <div class="flex justify-end">
+                            
+                            <div class="flex">
+                                <label for="" class="pt-2">Operating Expenses:</label>
+                                <input type="text" v-model="row.opexpensesinput" class="border rounded-md mx-1 px-2">
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between">
+                            <div class="flex justify-start mt-2 mb-6">
+                                
+                                <input type="text" v-model="row.opexpenseslabel" class="font-semibold text-lg border rounded-md w-[230px] px-2 py-1">
+                                <img src="../../components/images/icon-edit-2.png" class="w-[25px] h-[25px] opacity-40 absolute right-10" alt="Edit Icon">
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="flex overflow-auto overflow-y-hidden gap-1">
+                            <div>
+                                <p class="font-semibold">JAN</p>
+                                <input type="text" id="jan" name="jan" v-model="row.jan" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">FEB</p>
+                                <input type="text" id="feb" name="feb" v-model="row.feb" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">MAR</p>
+                                <input type="text" id="mar" name="mar" v-model="row.mar" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">APR</p>
+                                <input type="text" id="apr" name="apr" v-model="row.apr" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">MAY</p>
+                                <input type="text" id="may" name="may" v-model="row.may" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">JUN</p>
+                                <input type="text" id="jun" name="jun" v-model="row.jun" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">JUL</p>
+                                <input type="text" id="jul" name="jul" v-model="row.jul" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">AUG</p>
+                                <input type="text" id="aug" name="aug" v-model="row.aug" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">SEP</p>
+                                <input type="text" id="sep" name="sep" v-model="row.sep" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">OCT</p>
+                                <input type="text" id="oct" name="oct" v-model="row.oct" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">NOV</p>
+                                <input type="text" id="nov" name="nov" v-model="row.nov" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">DEC</p>
+                                <input type="text" id="dec" name="dec" v-model="row.dec" class="border w-[100px] px-1">
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="flex justify-center">
+                            <div class="w-[100%] h-0.5 bg-gray mt-[10px] mb-[10px] rounded-full duration-500 ease-in-out transform"> </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div v-if="activeTab === 'capital'">
+                    <div v-for="(rowcapex, indexcapex) in rowscapex" :key="indexcapex">
+                        <div class="flex justify-end">
+                            <div class="flex">
+                                <label for="" class="pt-2">Capital Expenditure Expenses:</label>
+                                <input type="text" v-model="rowcapex.capexpenditurelabel"  class="border rounded-md mx-1 px-2">
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between">
+                            <div class="flex justify-start mt-2 mb-6">
+                                <input type="text" v-model="rowcapex.capexpenditureinput" class="font-semibold text-lg border rounded-md w-[230px] px-2 py-1">
+                                <img src="../../components/images/icon-edit-2.png" class="w-[25px] h-[25px] opacity-40 absolute right-10" alt="Edit Icon">
+                            </div>
+                            
+                        </div>
+
+                        <div class="flex overflow-auto overflow-y-hidden gap-1">
+                            <div>
+                                <p class="font-semibold">JAN</p>
+                                <input type="text" id="jancapex" name="jancapex" v-model="rowcapex.jancapex" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">FEB</p>
+                                <input type="text" id="febcapex" name="febcapex" v-model="rowcapex.febcapex" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">MAR</p>
+                                <input type="text" id="marcapex" name="marcapex" v-model="rowcapex.marcapex" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">APR</p>
+                                <input type="text" id="aprcapex" name="aprcapex" v-model="rowcapex.aprcapex" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">MAY</p>
+                                <input type="text" id="maycapex" name="maycapex" v-model="rowcapex.maycapex" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">JUN</p>
+                                <input type="text" id="juncapex" name="juncapex" v-model="rowcapex.juncapex" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">JUL</p>
+                                <input type="text" id="julcapex" name="julcapex" v-model="rowcapex.julcapex" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">AUG</p>
+                                <input type="text" id="augcapex" name="augcapex" v-model="rowcapex.augcapex" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">SEP</p>
+                                <input type="text" id="sepcapex" name="sepcapex" v-model="rowcapex.sepcapex" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">OCT</p>
+                                <input type="text" id="octcapex" name="octcapex" v-model="rowcapex.octcapex" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">NOV</p>
+                                <input type="text" id="novcapex" name="novcapex" v-model="rowcapex.novcapex" class="border w-[100px] px-1">
+                            </div>
+                            <div>
+                                <p class="font-semibold">DEC</p>
+                                <input type="text" id="deccapex" name="deccapex" v-model="rowcapex.deccapex" class="border w-[100px] px-1">
+                            </div>
+                            
+                        </div>
+                        <div class="flex justify-center">
+                            <div class="w-[100%] h-0.5 bg-gray mt-[10px] mb-[10px] rounded-full duration-500 ease-in-out transform"> </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            
+        </div>
+    </ModalBudgetFund>
     <div class="flex flex-col min-h-screen">
         <div class="mt-4">
             <div class="text-white bg-black h-[40px] pt-1">
@@ -466,7 +681,13 @@ export default {
 
                                         <v-data-table :headers="headers" :items="items" :search="search"
                                             class="elevation-1 table-style w-screen" dense :items-per-page="5">
-                                            
+                                            <template #item.action="{ item }">
+                                                <div class="flex">
+                                                    <img src="../../components/images/icon-edit.png" @click.stop="openEditModal" class="w-[25px] h-[25px] cursor-pointer z-50" alt="Edit Icon">
+                                                    <img src="../../components/images/icon-delete.png" @click.stop="deleteItem(item)" class="w-[25px] h-[25px] cursor-pointer z-50" alt="Delete Icon">
+                                                </div>
+                                                
+                                            </template>
                                         </v-data-table>
                                     </v-card>
                                 </div>
@@ -474,7 +695,7 @@ export default {
                         </div>
                     </div>
                 </div>
-                <div class="absolute w-[100%] h-[100%] min-h-[700px] bg-black z-40 opacity-35" :class="isModalVisible ? 'block' : 'hidden'"></div>
+                <div class="absolute w-[100%] h-[100%] min-h-[700px] bg-black z-40 opacity-35" :class="isModalVisible || isModalEditVisible ? 'block' : 'hidden'"></div>
                 
             </div>
         </div>

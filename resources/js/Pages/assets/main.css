@@ -600,5 +600,6 @@ input:checked + .slider:before {
 .hoverbox-links:hover .hoverboxtext-links {
   visibility: visible;
   opacity: 1; /* Fully visible */
-  transform: translateY(32px) translateX(40px); /* Reset offset */
+  transform: translateY(32%) translateX(40px); /* Reset offset */
 }
+
