@@ -41,7 +41,7 @@ import { Link } from '@inertiajs/vue3';
               </div>
               <div class="flip-card-back text-black absolute top-0 rounded-md xl:w-[300px] xl:h-[300px] lg:w-[230px] lg:h-[230px] md:w-[200px] md:h-[200px] w-[160px] h-[160px]">
                 <div class="xl:mt-12 lg:mt-8 md:mt-7 mt-3">
-                  <button name="" id="" class="bg-white hoverbutton-links text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow w-[66%] xl:text-[15px] lg:text-[10px] md:text-[8px] text-[8px]  my-2">
+                  <button name="" id="" class="bg-white hoverbutton-links text-gray-800 font-semibold lg:py-2 py-1 px-4 border border-gray-400 rounded shadow w-[66%] xl:text-[15px] lg:text-[10px] md:text-[8px] text-[8px] my-2">
                     <Link href="/purchase-overview">Purchase Overview</Link>
                     
                   </button>
@@ -71,25 +71,25 @@ import { Link } from '@inertiajs/vue3';
                     </svg>
                     <div class="hoverboxtext-links absolute text-black shadow-lg hoverbox-links">
                       <div>
-                        <Link href="asset-management" class="hover:text-white hover:bg-black px-[23%]">
+                        <Link href="asset-management" class="hover:text-white hover:bg-lightBlack px-[23%] rounded-md py-1">
                           Assign Assets
                         </Link>
                       </div>
                       
                       <div>
-                          <Link href="moved-assets-in" class="hover:text-white hover:bg-black px-[23%]">
+                          <Link href="moved-assets-in" class="hover:text-white hover:bg-lightBlack px-[23%] rounded-md py-1">
                             Moved Assets
                           </Link>
                       </div>
 
                       <div>
-                        <Link href="scrapped-assets" class="hover:text-white hover:bg-black px-[19%]">
+                        <Link href="scrapped-assets" class="hover:text-white hover:bg-lightBlack px-[19%] rounded-md py-1">
                           Scrapped Assets
                         </Link>
                       </div>
                       
                       <div>
-                        <Link href="category" class="hover:text-white hover:bg-black px-[30%]">
+                        <Link href="category" class="hover:text-white hover:bg-lightBlack px-[31%] rounded-md py-1">
                           Category
                         </Link>
                       </div>
@@ -127,13 +127,13 @@ import { Link } from '@inertiajs/vue3';
                     </svg>
                     <div class="hoverboxtext-links absolute text-black shadow-lg hoverbox-links">
                       <div>
-                        <Link href="/user-management" class="hover:text-white hover:bg-black px-[36%]">
+                        <Link href="/user-management" class="hover:text-white hover:bg-lightBlack px-[36%] rounded-md py-1">
                           User
                         </Link>
                       </div>
                       
                       <div>
-                          <Link href="/department-management" class="hover:text-white hover:bg-black px-[23%]">
+                          <Link href="/department-management" class="hover:text-white hover:bg-lightBlack px-[23%] rounded-md py-1">
                             Department
                           </Link>
                       </div>
@@ -158,25 +158,25 @@ import { Link } from '@inertiajs/vue3';
                     </svg>
                     <div class="hoverboxtext-links absolute text-black shadow-lg hoverbox-links">
                       <div>
-                        <Link href="" class="hover:text-white hover:bg-black px-[23%]">
+                        <Link href="" class="hover:text-white hover:bg-lightBlack px-[23%] rounded-md py-1">
                           Sample
                         </Link>
                       </div>
                       
                       <div>
-                          <Link href="" class="hover:text-white hover:bg-black px-[23%]">
+                          <Link href="" class="hover:text-white hover:bg-lightBlack px-[23%] rounded-md py-1">
                             Sample
                           </Link>
                       </div>
 
                       <div>
-                        <Link href="" class="hover:text-white hover:bg-black px-[19%]">
+                        <Link href="" class="hover:text-white hover:bg-lightBlack px-[23%] rounded-md py-1">
                           Sample
                         </Link>
                       </div>
                       
                       <div>
-                        <Link href="" class="hover:text-white hover:bg-black px-[30%]">
+                        <Link href="" class="hover:text-white hover:bg-lightBlack px-[23%] rounded-md py-1">
                           Sample
                         </Link>
                       </div>
@@ -219,25 +219,25 @@ import { Link } from '@inertiajs/vue3';
                       </svg>
                       <div class="hoverboxtext-links absolute text-black shadow-lg hoverbox-links">
                         <div>
-                          <Link href="" class="hover:text-white hover:bg-black px-[23%]">
+                          <Link href="" class="hover:text-white hover:bg-lightBlack px-[23%] rounded-md py-1">
                             Sample
                           </Link>
                         </div>
                         
                         <div>
-                            <Link href="" class="hover:text-white hover:bg-black px-[23%]">
+                            <Link href="" class="hover:text-white hover:bg-lightBlack px-[23%] rounded-md py-1">
                               Sample
                             </Link>
                         </div>
 
                         <div>
-                          <Link href="" class="hover:text-white hover:bg-black px-[19%]">
+                          <Link href="" class="hover:text-white hover:bg-lightBlack px-[23%] rounded-md py-1">
                             Sample
                           </Link>
                         </div>
                         
                         <div>
-                          <Link href="" class="hover:text-white hover:bg-black px-[30%]">
+                          <Link href="" class="hover:text-white hover:bg-lightBlack px-[23%] rounded-md py-1">
                             Sample
                           </Link>
                         </div>

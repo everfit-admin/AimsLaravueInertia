@@ -11,7 +11,8 @@ module.exports = {
         colors: {
           silver: '#c4c4c4',
           lightBlack: '#282828',
-          gray: '#959592'
+          gray: '#959592',
+    
         },
         keyframes: {
           slideInLeft: {

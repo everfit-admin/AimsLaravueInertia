@@ -16,12 +16,8 @@ export default {
     const isActive = computed(() =>
       ['/dashboard-aims', '/purchase-overview', '/purchase-approval', '/purchase-requests', '/asset-management', '/moved-assets-in', '/moved-assets-out', '/scrapped-assets', '/category'].includes(currentUrl.value)
     );
-    const isActiveHome = computed(() =>
-      ['/home'].includes(currentUrl.value)
-    );
-    const isActiveBudget = computed(() =>
-      ['/budget-fund'].includes(currentUrl.value)
-    );
+    
+    
     const isActiveItPortal = computed(() =>
       ['/portal-dashboard', '/user-management', '/department-management'].includes(currentUrl.value)
     );
@@ -30,7 +26,7 @@ export default {
       ['/procurement-dashboard', '/department-request'].includes(currentUrl.value)
     );
 
-    return { isActive, isActiveItPortal, isActiveProcurement, currentUrl, isActiveBudget, isActiveHome };
+    return { isActive, isActiveItPortal, isActiveProcurement, currentUrl};
   },
 };
 </script>
@@ -45,7 +41,7 @@ export default {
     <!-- Navigation Links -->
     <div class="flex justify-center gap-8 col-span-3 font-bold text-white lg:text-md md:text-sm sm:text-xs text-[10px] xl:pt-1 pt-1">
       <div class="hover:scale-110 transform transition duration-300">
-        <Link href="/home" class="no-hover-nav" :class="{ 'bg-silver text-black px-2 py-1 rounded-sm no-hover-nav': isActiveHome }">
+        <Link href="/home" class="no-hover-nav" :class="{ 'bg-silver text-black px-2 py-1 rounded-sm no-hover-nav': $page.url === '/home' }">
           HOME
         </Link>
       </div>
@@ -55,7 +51,7 @@ export default {
         </Link>
       </div>
       <div class="hover:scale-110 transform transition duration-300">
-        <Link href="/budget-fund" class="no-hover-nav" :class="{ 'bg-silver text-black px-2 py-1 rounded-sm no-hover-nav': isActiveBudget }">
+        <Link href="/budget-fund" class="no-hover-nav" :class="{ 'bg-silver text-black px-2 py-1 rounded-sm no-hover-nav': $page.url === '/budget-fund' }">
           BUDGET
         </Link>
       </div>
@@ -70,7 +66,7 @@ export default {
         </Link>
       </div>
       <div class="hover:scale-110 transform transition duration-300">
-        <Link href="/directory" class="no-hover-nav" :class="{ 'bg-silver text-black px-2 py-1 rounded-sm no-hover-nav': currentUrl.value === '/directory' }">
+        <Link href="/directory" class="no-hover-nav" :class="{ 'bg-silver text-black px-2 py-1 rounded-sm no-hover-nav': $page.url === '/directory' }">
           DIRECTORY
         </Link>
       </div>
@@ -85,7 +81,7 @@ export default {
         <div class="z-50 absolute group-hover:-translate-x-[270px] translate-x-[50px] translate-y-[2px] duration-500">
             <div class="w-[300px] h-[750px] bg-white shadow-lg rounded-lg py-5 px-2 overflow-y-auto">
               <div class="flex justify-center">
-                <div class="flex justify-center bg-slate-200 w-[120px] h-[120px] pt-1 rounded-full group-hover:opacity-50 shadow-lg">
+                <div class="flex justify-center bg-slate-200 w-[120px] h-[120px] pt-1 rounded-full shadow-lg">
                     <font-awesome-icon :icon="['far', 'user']"  class="w-[70px] h-[70px] py-[15px]"/>
                 </div>
               </div>
@@ -98,19 +94,19 @@ export default {
                 </button>
               </div>
               <div class="flex justify-center">
-                <div class="grid grid-cols-2 gap-2">
-                  <div class="w-[100px] h-[100px] bg-gray rounded-lg"></div>
-                  <div class="w-[100px] h-[100px] bg-gray rounded-lg"></div>
-                  <div class="w-[100px] h-[100px] bg-gray rounded-lg"></div>
-                  <div class="w-[100px] h-[100px] bg-gray rounded-lg"></div>
-                  <div class="w-[100px] h-[100px] bg-gray rounded-lg"></div>
-                  <div class="w-[100px] h-[100px] bg-gray rounded-lg"></div>
-                  <div class="w-[100px] h-[100px] bg-gray rounded-lg"></div>
-                  <div class="w-[100px] h-[100px] bg-gray rounded-lg"></div>
-                  <div class="w-[100px] h-[100px] bg-gray rounded-lg"></div>
-                  <div class="w-[100px] h-[100px] bg-gray rounded-lg"></div>
-                  <div class="w-[100px] h-[100px] bg-gray rounded-lg"></div>
-                  <div class="w-[100px] h-[100px] bg-gray rounded-lg"></div>
+                <div class="grid grid-cols-3 gap-2">
+                  <div class="w-[80px] h-[80px] bg-gray rounded-lg"></div>
+                  <div class="w-[80px] h-[80px] bg-gray rounded-lg"></div>
+                  <div class="w-[80px] h-[80px] bg-gray rounded-lg"></div>
+                  <div class="w-[80px] h-[80px] bg-gray rounded-lg"></div>
+                  <div class="w-[80px] h-[80px] bg-gray rounded-lg"></div>
+                  <div class="w-[80px] h-[80px] bg-gray rounded-lg"></div>
+                  <div class="w-[80px] h-[80px] bg-gray rounded-lg"></div>
+                  <div class="w-[80px] h-[80px] bg-gray rounded-lg"></div>
+                  <div class="w-[80px] h-[80px] bg-gray rounded-lg"></div>
+                  <div class="w-[80px] h-[80px] bg-gray rounded-lg"></div>
+                  <div class="w-[80px] h-[80px] bg-gray rounded-lg"></div>
+                  <div class="w-[80px] h-[80px] bg-gray rounded-lg"></div>
                 </div>
               </div>
               
